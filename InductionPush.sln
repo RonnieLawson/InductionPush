@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InductionPush", "InductionP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InductionPush.Tests", "InductionPush.Tests\InductionPush.Tests.csproj", "{7C8F2BFB-AD59-49FB-ADC3-3B70CAAE034E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InductionPush2", "InductionPush2\InductionPush2.csproj", "{F76CE377-C632-4DD6-ACF9-C4E3E234AAA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7C8F2BFB-AD59-49FB-ADC3-3B70CAAE034E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C8F2BFB-AD59-49FB-ADC3-3B70CAAE034E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C8F2BFB-AD59-49FB-ADC3-3B70CAAE034E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F76CE377-C632-4DD6-ACF9-C4E3E234AAA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F76CE377-C632-4DD6-ACF9-C4E3E234AAA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F76CE377-C632-4DD6-ACF9-C4E3E234AAA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F76CE377-C632-4DD6-ACF9-C4E3E234AAA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
