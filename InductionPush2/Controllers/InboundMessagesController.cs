@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace InductionPush2.Controllers
+namespace InductionPush.Controllers
 {
     using System;
     using System.Web.Http;
