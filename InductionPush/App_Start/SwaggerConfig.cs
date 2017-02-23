@@ -5,7 +5,7 @@ using System.Web.Http.Description;
 using Swashbuckle.Application;
 using Swashbuckle.Swagger;
 using WebActivatorEx;
-using InductionPush2;
+using InductionPush;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 

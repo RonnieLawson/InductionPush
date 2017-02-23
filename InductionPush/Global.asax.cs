@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
 
-namespace InductionPush2
+namespace InductionPush
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
