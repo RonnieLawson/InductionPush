@@ -14,7 +14,8 @@ namespace InductionPush.Controllers
                 // do something with the inboundMessage that you have just received
 
                 SendConfirmation();
-                Utility.Log("Message Received");
+                //Utility.Log("Message Received");
+                Console.WriteLine("Message Recieved: " + inboundMessage.MessageText);
             }
 
             private static void SendConfirmation()
