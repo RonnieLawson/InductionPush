@@ -39,6 +39,7 @@ namespace InductionPush.Controllers
                 MailMessage mail = new MailMessage
                 {
                     To = { new MailAddress("quiffco@quiffco.com")},
+                    From = new MailAddress("messageDispatcher@quiffco.com"),
                     Subject = "this is a test email.",
                     Body = "this is my test email body"
                 };
