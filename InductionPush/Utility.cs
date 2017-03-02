@@ -1,14 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web;
+using System.Text;
 using System.Xml.Linq;
 
 namespace InductionPush
 {
     public class Utility
     {
+        public static string Encode(string toEncode)
+        {
+            return Convert.ToBase64String(Encoding.ASCII.GetBytes(toEncode));
+        }
+
 
         public static void Log(string logMessage, string loggingDirectory = @"\logs\")
         {

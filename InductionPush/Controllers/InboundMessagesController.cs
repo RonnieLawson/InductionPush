@@ -1,5 +1,4 @@
-﻿using RestClient.Clients;
-using RestClient.Models;
+﻿using InductionPush.Models;
 
 namespace InductionPush.Controllers
 {
