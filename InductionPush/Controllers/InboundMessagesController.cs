@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using RestClient;
-using RestClient.Clients;
+﻿using RestClient.Clients;
 using RestClient.Models;
 
 namespace InductionPush.Controllers
@@ -28,8 +21,10 @@ namespace InductionPush.Controllers
             {
                 var restAuthenticator = new RestAuthenticator("https://api.esendex.com", "/v1.0/session/constructor", "Ronnie.Lawson+Induction@esendex.com",
                     Utility.GetSecret("password"));
-                var messageSender = new MessageSender(@"/v1.0/messagedispatcher", restAuthenticator, "EX0224195");
-                messageSender.MessageToSend = new Message("07590360247", "Message received by push notifier");
+                var messageSender = new MessageSender(@"/v1.0/messagedispatcher", restAuthenticator, "EX0224195")
+                {
+                    MessageToSend = new Message("07590360247", "Message received by push notifier")
+                };
                 var result = messageSender.Execute();
                 Utility.Log("send status: " + result);
             }
