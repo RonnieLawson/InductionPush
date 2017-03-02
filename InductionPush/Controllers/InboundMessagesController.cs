@@ -8,6 +8,7 @@ namespace InductionPush.Controllers
     {
         public class InboundMessagesController : ApiController
         {
+            [HttpPost]
             public void Post(InboundMessage inboundMessage)
             {
                 // do something with the inboundMessage that you have just received
