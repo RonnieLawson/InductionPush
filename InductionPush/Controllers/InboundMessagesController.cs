@@ -4,6 +4,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using RestClient;
+using RestClient.Clients;
+using RestClient.Models;
 
 namespace InductionPush.Controllers
 {
@@ -16,7 +19,19 @@ namespace InductionPush.Controllers
             public void Post(InboundMessage inboundMessage)
             {
                 // do something with the inboundMessage that you have just received
-                Console.WriteLine("Message Received");
+
+                SendConfirmation();
+                Utility.Log("Message Received");
+            }
+
+            private static void SendConfirmation()
+            {
+                var restAuthenticator = new RestAuthenticator("https://api.esendex.com", "/v1.0/session/constructor", "Ronnie.Lawson+Induction@esendex.com",
+                    Utility.GetSecret("password"));
+                var messageSender = new MessageSender(@"/v1.0/messagedispatcher", restAuthenticator, "EX0224195");
+                messageSender.MessageToSend = new Message("07590360247", "Message received by push notifier");
+                var result = messageSender.Execute();
+                Utility.Log("send status: " + result);
             }
         }
         public class InboundMessage
