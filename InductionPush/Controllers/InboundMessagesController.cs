@@ -1,4 +1,5 @@
-﻿using InductionPush.Models;
+﻿using System.Net.Mail;
+using InductionPush.Models;
 
 namespace InductionPush.Controllers
 {
@@ -13,7 +14,7 @@ namespace InductionPush.Controllers
             {
                 // do something with the inboundMessage that you have just received
 
-/*                SendConfirmation();*/
+                SendConfirmation();
                 //Utility.Log("Message Received");
                 if(inboundMessage != null)
                     Console.WriteLine("Message Recieved: " + inboundMessage.MessageText);
@@ -22,18 +23,27 @@ namespace InductionPush.Controllers
                     Console.WriteLine("Message Recieved But invalid inbound message");
                 }
             }
-/*
+
             private static void SendConfirmation()
             {
-                /*                var restAuthenticator = new RestAuthenticator("https://api.esendex.com", "/v1.0/session/constructor", "Ronnie.Lawson+Induction@esendex.com",
-                                    Utility.GetSecret("password"));
-                                var messageSender = new MessageSender(@"/v1.0/messagedispatcher", restAuthenticator, "EX0224195")
-                                {
-                                    MessageToSend = new Message("07590360247", "Message received by push notifier")
-                                };
-                                var result = messageSender.Execute();
-                                Utility.Log("send status: " + result);#1#
-            }*/
+
+                SmtpClient client = new SmtpClient
+                {
+                    Port = 465,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new System.Net.NetworkCredential("messageDispatcher@quiffco.com", "kxF22JKV"),
+                    Host = "mail3.gridhost.co.uk"
+                };
+                MailMessage mail = new MailMessage
+                {
+                    To = { new MailAddress("quiffco@quiffco.com")},
+                    Subject = "this is a test email.",
+                    Body = "this is my test email body"
+                };
+                client.Send(mail);
+            }
         }
         public class InboundMessage
         {
