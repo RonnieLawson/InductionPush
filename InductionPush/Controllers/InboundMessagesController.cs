@@ -13,11 +13,16 @@ namespace InductionPush.Controllers
             {
                 // do something with the inboundMessage that you have just received
 
-                SendConfirmation();
+/*                SendConfirmation();*/
                 //Utility.Log("Message Received");
-                Console.WriteLine("Message Recieved: " + inboundMessage.MessageText);
+                if(inboundMessage != null)
+                    Console.WriteLine("Message Recieved: " + inboundMessage.MessageText);
+                else
+                {
+                    Console.WriteLine("Message Recieved But invalid inbound message");
+                }
             }
-
+/*
             private static void SendConfirmation()
             {
                 /*                var restAuthenticator = new RestAuthenticator("https://api.esendex.com", "/v1.0/session/constructor", "Ronnie.Lawson+Induction@esendex.com",
@@ -27,8 +32,8 @@ namespace InductionPush.Controllers
                                     MessageToSend = new Message("07590360247", "Message received by push notifier")
                                 };
                                 var result = messageSender.Execute();
-                                Utility.Log("send status: " + result);*/
-            }
+                                Utility.Log("send status: " + result);#1#
+            }*/
         }
         public class InboundMessage
         {
