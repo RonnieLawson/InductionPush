@@ -14,9 +14,13 @@ namespace InductionPush.Controllers
             [HttpPost]
             public void Post(InboundMessage inboundMessage)
             {
+                Console.WriteLine("Message Received!");
                 // do something with the inboundMessage that you have just received
                 if (inboundMessage != null)
+                {
+                    Console.WriteLine("Sending Email");
                     _emailSender.SendEmail($"Message Received from {inboundMessage.From}", inboundMessage.MessageText);
+                }
                 //Utility.Log("Message Received");             
             }
         }
