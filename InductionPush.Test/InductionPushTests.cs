@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Configuration;
+using NUnit.Framework;
 
 namespace InductionPush.Test
 {
@@ -21,7 +22,8 @@ namespace InductionPush.Test
                 var subject = "Test Subject";
                 var body = "test body";
 
-                _emailSender.SendEmail(subject, body);
+                
+                _emailSender.SendEmail(subject, body, "");
             }
         }
     }
