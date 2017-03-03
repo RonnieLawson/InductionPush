@@ -1,4 +1,5 @@
-﻿using System.Net.Mail;
+﻿using System.Configuration;
+using System.Net.Mail;
 using InductionPush.Models;
 
 namespace InductionPush.Controllers
@@ -14,13 +15,16 @@ namespace InductionPush.Controllers
             [HttpPost]
             public void Post(InboundMessage inboundMessage)
             {
-                System.Diagnostics.Trace.TraceInformation("trace logging is working");
-                Console.WriteLine("Message Received!");
+                System.Diagnostics.Trace.TraceInformation("Message Received!");
+                var password = ConfigurationManager.AppSettings["EmailPasword"];
+
+                System.Diagnostics.Trace.TraceInformation($"Sending email using password: {password}");
+
                 // do something with the inboundMessage that you have just received
                 if (inboundMessage != null)
                 {
                     Console.WriteLine("Sending Email");
-                    _emailSender.SendEmail($"Message Received from {inboundMessage.From}", inboundMessage.MessageText);
+                    _emailSender.SendEmail($"Message Received from {inboundMessage.From}", inboundMessage.MessageText, password);
                 }
                 //Utility.Log("Message Received");             
             }

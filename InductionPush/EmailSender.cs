@@ -6,11 +6,11 @@ namespace InductionPush
 {
     public class EmailSender
     {
-        public void SendEmail(string subject, string body)
+        public void SendEmail(string subject, string body, string password)
         {
             var message = new MailMessage("messageDispatch@quiffco.com", "quiffco@quiffco.com", subject, body);
 
-            var password = ConfigurationManager.AppSettings["EmailPasword"];
+
 
             var client = new SmtpClient
             {
