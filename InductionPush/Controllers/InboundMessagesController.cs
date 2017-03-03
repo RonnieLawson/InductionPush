@@ -17,9 +17,10 @@ namespace InductionPush.Controllers
             {
                 System.Diagnostics.Trace.TraceInformation($"Message Received from {inboundMessage.From}");
                 System.Diagnostics.Trace.TraceInformation($"Message Text: {inboundMessage.MessageText}");
+                //var password = ConfigurationManager.AppSettings["EmailPasword"];
                 var password = ConfigurationManager.AppSettings["EmailPasword"];
 
-                
+
 
                 // do something with the inboundMessage that you have just received
                 if (inboundMessage != null)
