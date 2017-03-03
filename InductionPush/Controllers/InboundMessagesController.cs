@@ -14,6 +14,7 @@ namespace InductionPush.Controllers
             [HttpPost]
             public void Post(InboundMessage inboundMessage)
             {
+                System.Diagnostics.Trace.TraceInformation("trace logging is working");
                 Console.WriteLine("Message Received!");
                 // do something with the inboundMessage that you have just received
                 if (inboundMessage != null)
