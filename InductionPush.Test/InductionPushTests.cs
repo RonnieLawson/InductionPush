@@ -18,8 +18,8 @@ namespace InductionPush.Test
             [Test]
             public void ThenTheEmailIsSent()
             {
-                string subject = "Test Subject";
-                string body = "test body";
+                var subject = "Test Subject";
+                var body = "test body";
 
                 _emailSender.SendEmail(subject, body);
             }
