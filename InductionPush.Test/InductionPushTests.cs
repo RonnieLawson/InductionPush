@@ -1,4 +1,4 @@
-﻿using System.Configuration;
+﻿using InductionPush.Controllers.PushNotificationsWebAPI.Controllers;
 using NUnit.Framework;
 
 namespace InductionPush.Test
@@ -22,9 +22,60 @@ namespace InductionPush.Test
                 var subject = "Test Subject";
                 var body = "test body";
 
-                
+
                 _emailSender.SendEmail(subject, body, "");
             }
         }
+/*
+        [TestFixture]
+        public class GIvenAnXmlDecoder
+        {
+            private InboundMessage _inboundMessage;
+
+            [OneTimeSetUp]
+            public void WhenDeserializingTheResponse()
+            {
+                string content = "    <InboundMessage><Id>6eb2a830-595b-42e5-99a3-57d87e63db36</Id><MessageId>6eb2a830-595b-42e5-99a3-57d87e63db36</MessageId><AccountId>6eb2a830-595b-42e5-99a3-57d87e63db36</AccountId><MessageText>Hello</MessageText><From>07590360247</From><To>07422128264</To></InboundMessage>";
+                var xml = new WebApi;
+                var restResponse = new RestResponse {Content = content};
+                _inboundMessage = xml.Deserialize<MessageInboxResponse>(restResponse);
+            }
+
+            [Test]
+            public void ThenTheFirstMessageHasTheCorrectId()
+            {
+                Assert.That(_inboundMessage.MessageHeaders[0].Id.ToString(), Is.EqualTo("11483b43-072a-418a-b59c-d0261c63fc56"));
+            }
+
+            [Test]
+            public void ThenTheMessageHeadersListIsPopulatedWithTheCorrectCount()
+            {
+                Assert.That(_inboundMessage.MessageHeaders.Count, Is.EqualTo(2));
+            }
+
+            [Test]
+            public void ThenTheMessageHeadersListIsPopulated()
+            {
+                Assert.That(_inboundMessage.MessageHeaders, Is.Not.Null);
+            }
+
+            [Test]
+            public void ThenTheMessageInboxResponseTotalCountIsCorrect()
+            {
+                Assert.That(_inboundMessage.TotalCount, Is.EqualTo(2));
+            }
+
+            [Test]
+            public void ThenTheMessageInboxResponseCountIsCorrect()
+            {
+                Assert.That(_inboundMessage.Count, Is.EqualTo(2));
+            }
+
+            [Test]
+            public void ThenTheMessageInboxResponseIsPopulated()
+            {
+                Assert.That(_inboundMessage, Is.Not.Null);
+            }
+        }*/
     }
 }
