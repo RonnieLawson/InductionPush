@@ -17,17 +17,32 @@ namespace PushNotificationsWebAPI.Controllers
     public class InboundMessagesController : ApiController
     {
         //public void Post(InboundMessage inboundMessage)
-        public async void  Post(object postobject)
+        /*        public async void  Post(object postobject)
+                {
+                    // do something with the inboundMessage that you have just received
+                    System.Diagnostics.Trace.TraceInformation($"Message Received!");
+
+                    string raw = await RawContentReader.Read(this.Request);
+                    System.Diagnostics.Trace.TraceInformation(raw);
+                    //if (inboundMessage == null)
+                   // {
+                    //    System.Diagnostics.Trace.TraceInformation($"Message is null");
+                   // }
+                }*/
+
+        public async void Post(InboundMessage inboundMessage)
         {
             // do something with the inboundMessage that you have just received
             System.Diagnostics.Trace.TraceInformation($"Message Received!");
 
+
+            if (inboundMessage == null)
+             {
+                System.Diagnostics.Trace.TraceInformation($"Message is null");
+             }
+
             string raw = await RawContentReader.Read(this.Request);
             System.Diagnostics.Trace.TraceInformation(raw);
-            //if (inboundMessage == null)
-           // {
-            //    System.Diagnostics.Trace.TraceInformation($"Message is null");
-           // }
         }
     }
 
@@ -46,8 +61,6 @@ namespace PushNotificationsWebAPI.Controllers
         public string From { get; set; }
         [XmlElement]
         public string To { get; set; }
-        [XmlElement]
-        public DateTime Now { get; set; }
     }
 
     public class RawContentReader
