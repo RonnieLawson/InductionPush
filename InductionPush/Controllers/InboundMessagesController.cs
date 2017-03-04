@@ -16,6 +16,11 @@ namespace PushNotificationsWebAPI.Controllers
         {
             // do something with the inboundMessage that you have just received
             System.Diagnostics.Trace.TraceInformation($"Message Received!");
+
+            if (inboundMessage == null)
+            {
+                System.Diagnostics.Trace.TraceInformation($"Message is null");
+            }
         }
     }
 
