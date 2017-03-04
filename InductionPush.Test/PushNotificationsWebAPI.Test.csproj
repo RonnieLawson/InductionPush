@@ -62,9 +62,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\InductionPush\PushNotificationWebApi.csproj">
+    <ProjectReference Include="..\InductionPush\PushNotificationWebAPI.csproj">
       <Project>{F76CE377-C632-4DD6-ACF9-C4E3E234AAA8}</Project>
-      <Name>PushNotificationWebApi</Name>
+      <Name>PushNotificationWebAPI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

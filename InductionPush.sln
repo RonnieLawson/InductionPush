@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushNotificationWebApi", "InductionPush\PushNotificationWebApi.csproj", "{F76CE377-C632-4DD6-ACF9-C4E3E234AAA8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushNotificationWebAPI", "InductionPush\PushNotificationWebAPI.csproj", "{F76CE377-C632-4DD6-ACF9-C4E3E234AAA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ushNotificationsWebAPI.Test", "InductionPush.Test\ushNotificationsWebAPI.Test.csproj", "{BEE9BC3B-38E5-4D3B-8576-89EA28A331E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushNotificationsWebAPI.Test", "InductionPush.Test\PushNotificationsWebAPI.Test.csproj", "{BEE9BC3B-38E5-4D3B-8576-89EA28A331E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

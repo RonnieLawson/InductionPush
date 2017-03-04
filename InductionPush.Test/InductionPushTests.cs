@@ -1,5 +1,9 @@
-﻿using InductionPush.Controllers.PushNotificationsWebAPI.Controllers;
+﻿using System;
+using System.Xml;
+using System.Xml.Serialization;
+using InductionPush.Controllers.PushNotificationsWebAPI.Controllers;
 using NUnit.Framework;
+using PushNotificationsWebAPI.Controllers;
 
 namespace InductionPush.Test
 {
@@ -26,8 +30,8 @@ namespace InductionPush.Test
                 _emailSender.SendEmail(subject, body, "");
             }
         }
-/*
-        [TestFixture]
+
+        /*[TestFixture]
         public class GIvenAnXmlDecoder
         {
             private InboundMessage _inboundMessage;
@@ -36,8 +40,19 @@ namespace InductionPush.Test
             public void WhenDeserializingTheResponse()
             {
                 string content = "    <InboundMessage><Id>6eb2a830-595b-42e5-99a3-57d87e63db36</Id><MessageId>6eb2a830-595b-42e5-99a3-57d87e63db36</MessageId><AccountId>6eb2a830-595b-42e5-99a3-57d87e63db36</AccountId><MessageText>Hello</MessageText><From>07590360247</From><To>07422128264</To></InboundMessage>";
-                var xml = new WebApi;
-                var restResponse = new RestResponse {Content = content};
+
+                var xmlDoc = new XmlDocument();
+
+                XmlReader xmlReader = new DataTextReader();
+
+                xmlDoc.Load();
+                using ()
+                {
+                    InboundMessage obj = new XmlSerializer(typeof(InboundMessage)).Deserialize(,);
+                    myObject scp = (myObject)obj;
+                }
+            
+            var restResponse = new RestResponse {Content = content};
                 _inboundMessage = xml.Deserialize<MessageInboxResponse>(restResponse);
             }
 
