@@ -15,6 +15,7 @@ namespace PushNotificationsWebAPI.Controllers
         public void Post(InboundMessage inboundMessage)
         {
             // do something with the inboundMessage that you have just received
+            System.Diagnostics.Trace.TraceInformation($"Message Received!");
         }
     }
 
