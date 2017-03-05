@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Xml;
 using System.Xml.Serialization;
-using InductionPush.Controllers.PushNotificationsWebAPI.Controllers;
 using NUnit.Framework;
 using PushNotificationsWebAPI.Controllers;
 

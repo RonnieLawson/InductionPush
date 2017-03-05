@@ -8,73 +8,51 @@
 using System;
 using System.IO;
 using System.Net.Http;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Xml.Serialization;
+using InductionPush;
 
 namespace PushNotificationsWebAPI.Controllers
 {
     public class InboundMessagesController : ApiController
     {
-        //public void Post(InboundMessage inboundMessage)
-        /*        public async void  Post(object postobject)
-                {
-                    // do something with the inboundMessage that you have just received
-                    System.Diagnostics.Trace.TraceInformation($"Message Received!");
 
-                    string raw = await RawContentReader.Read(this.Request);
-                    System.Diagnostics.Trace.TraceInformation(raw);
-                    //if (inboundMessage == null)
-                   // {
-                    //    System.Diagnostics.Trace.TraceInformation($"Message is null");
-                   // }
-                }*/
 
-        public async void Post(InboundMessage inboundMessage)
+        private readonly EmailSender _emailSender = new EmailSender();
+
+
+        public void Post(InboundMessage inboundMessage)
         {
-            // do something with the inboundMessage that you have just received
-            System.Diagnostics.Trace.TraceInformation($"Message Received!");
-
-
             if (inboundMessage == null)
-             {
-                System.Diagnostics.Trace.TraceInformation($"Message is null");
-             }
+            {
+                System.Diagnostics.Trace.TraceInformation("Null Inbound Message");
+                return;
+            }
 
-            string raw = await RawContentReader.Read(this.Request);
-            System.Diagnostics.Trace.TraceInformation(raw);
+            System.Diagnostics.Trace.TraceInformation($"Message Received from {inboundMessage.From}");
+            System.Diagnostics.Trace.TraceInformation($"Message Text: {inboundMessage.MessageText}");
+            
+            //var password = ConfigurationManager.AppSettings["EmailPassword"];
+
+            //var password = Environment.GetEnvironmentVariable("APPSETTINGS_EmailPassword");
+
+            // do something with the inboundMessage that you have just received
+            System.Diagnostics.Trace.TraceInformation($"Sending email");
+            Console.WriteLine("Sending Email");
+            _emailSender.SendEmail($"Message Received from {inboundMessage.From}", inboundMessage.MessageText, inboundMessage.From);
+            //Utility.Log("Message Received");             
         }
     }
 
-    [XmlRoot]
     public class InboundMessage
     {
-        [XmlElement]
         public Guid Id { get; set; }
-        [XmlElement]
         public Guid MessageId { get; set; }
-        [XmlElement]
         public Guid AccountId { get; set; }
-        [XmlElement]
         public string MessageText { get; set; }
-        [XmlElement]
         public string From { get; set; }
-        [XmlElement]
         public string To { get; set; }
-    }
-
-    public class RawContentReader
-    {
-        public static async Task<string> Read(HttpRequestMessage req)
-        {
-            using (var contentStream = await req.Content.ReadAsStreamAsync())
-            {
-                contentStream.Seek(0, SeekOrigin.Begin);
-                using (var sr = new StreamReader(contentStream))
-                {
-                    return sr.ReadToEnd();
-                }
-            }
-        }
     }
 }
