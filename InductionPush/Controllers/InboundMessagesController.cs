@@ -30,23 +30,10 @@ namespace InductionPush.Controllers
             var password = ConfigurationManager.AppSettings["EmailPassword"];
             System.Diagnostics.Trace.TraceInformation($"pword: {password}");
 
-            //var password = Environment.GetEnvironmentVariable("APPSETTINGS_EmailPassword");
-
-            // do something with the inboundMessage that you have just received
+  
             System.Diagnostics.Trace.TraceInformation($"Sending email");
             Console.WriteLine("Sending Email");
-            _emailSender.SendEmail($"Message Received from {inboundMessage.From}", inboundMessage.MessageText, inboundMessage.From);
-            //Utility.Log("Message Received");             
+            _emailSender.SendEmail($"Message Received from {inboundMessage.From}", inboundMessage.MessageText, password);           
         }
-    }
-
-    public class InboundMessage
-    {
-        public Guid Id { get; set; }
-        public Guid MessageId { get; set; }
-        public Guid AccountId { get; set; }
-        public string MessageText { get; set; }
-        public string From { get; set; }
-        public string To { get; set; }
     }
 }

@@ -102,7 +102,9 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\InboundMessage.cs" />
     <Compile Include="Controllers\InboundMessagesController.cs" />
     <Compile Include="EmailSender.cs" />
     <Compile Include="Global.asax.cs">
