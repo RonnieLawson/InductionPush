@@ -1,6 +1,6 @@
 using System;
 
-namespace InductionPush.Controllers
+namespace InductionPush.Models
 {
     public class InboundMessage
     {

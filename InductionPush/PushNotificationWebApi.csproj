@@ -73,7 +73,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Xml.Linq" />
@@ -103,7 +102,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\InboundMessage.cs" />
+    <Compile Include="Controllers\DeliveryNotificationController.cs" />
+    <Compile Include="Controllers\RawContentReader.cs" />
+    <Compile Include="Models\MessageDelivered.cs" />
+    <Compile Include="Models\InboundMessage.cs" />
     <Compile Include="Controllers\InboundMessagesController.cs" />
     <Compile Include="EmailSender.cs" />
     <Compile Include="Global.asax.cs">

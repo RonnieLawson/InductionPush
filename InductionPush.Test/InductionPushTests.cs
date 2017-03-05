@@ -7,7 +7,7 @@ namespace InductionPush.Test
 {
     [TestFixture]
     public class InductionPushTests
-    {
+/*    {
         public class GivenAnEmailSender
         {
             private EmailSender _emailSender;
@@ -25,9 +25,9 @@ namespace InductionPush.Test
                 var body = "test body";
 
 
-                _emailSender.SendEmail(subject, body, "");
+                _emailSender.SendEmail(subject, body);
             }
-        }
+        }*/
 
         /*[TestFixture]
         public class GIvenAnXmlDecoder
