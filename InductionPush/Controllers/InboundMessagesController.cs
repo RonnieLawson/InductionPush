@@ -28,7 +28,7 @@ namespace InductionPush.Controllers
             System.Diagnostics.Trace.TraceInformation($"Message Text: {inboundMessage.MessageText}");
             
             var password = ConfigurationManager.AppSettings["EmailPassword"];
-            //System.Diagnostics.Trace.TraceInformation($"pword: {password}");
+            System.Diagnostics.Trace.TraceInformation($"pword: {password}");
 
   
             System.Diagnostics.Trace.TraceInformation($"Sending email");
