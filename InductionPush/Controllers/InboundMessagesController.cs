@@ -5,24 +5,17 @@
 // Create a new  ASP.NET 4 Web Application using the Web API template
 // Add the following code in a new Controller called InboundMessagesController in the Controllers folder.
 // Compile the solution and deploy the project to IIS7 on an internet-connected server
-using System;
-using System.IO;
-using System.Net.Http;
-using System.Runtime.Serialization;
-using System.Threading.Tasks;
-using System.Web.Http;
-using System.Xml.Serialization;
-using InductionPush;
 
-namespace PushNotificationsWebAPI.Controllers
+using System;
+using System.Configuration;
+using System.Web.Http;
+
+namespace InductionPush.Controllers
 {
     public class InboundMessagesController : ApiController
     {
-
-
         private readonly EmailSender _emailSender = new EmailSender();
-
-
+        
         public void Post(InboundMessage inboundMessage)
         {
             if (inboundMessage == null)
@@ -34,7 +27,8 @@ namespace PushNotificationsWebAPI.Controllers
             System.Diagnostics.Trace.TraceInformation($"Message Received from {inboundMessage.From}");
             System.Diagnostics.Trace.TraceInformation($"Message Text: {inboundMessage.MessageText}");
             
-            //var password = ConfigurationManager.AppSettings["EmailPassword"];
+            var password = ConfigurationManager.AppSettings["EmailPassword"];
+            System.Diagnostics.Trace.TraceInformation($"pword: {password}");
 
             //var password = Environment.GetEnvironmentVariable("APPSETTINGS_EmailPassword");
 
