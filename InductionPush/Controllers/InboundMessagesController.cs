@@ -20,7 +20,7 @@ namespace InductionPush.Controllers
         {
             if (inboundMessage == null)
             {
-                System.Diagnostics.Trace.TraceInformation("Null Inbound Message");
+                System.Diagnostics.Trace.TraceError("Null Inbound Message");
                 return;
             }
 
@@ -32,7 +32,7 @@ namespace InductionPush.Controllers
 
   
             System.Diagnostics.Trace.TraceInformation($"Sending email");
-            Console.WriteLine("Sending Email");
+
             _emailSender.SendEmail($"Message Received from {inboundMessage.From}", inboundMessage.MessageText, password);           
         }
     }
