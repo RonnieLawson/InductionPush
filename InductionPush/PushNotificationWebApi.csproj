@@ -93,6 +93,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AccountEventHandler.asp" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -102,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountEventController.cs" />
     <Compile Include="Controllers\DeliveryNotificationController.cs" />
     <Compile Include="Controllers\RawContentReader.cs" />
     <Compile Include="Models\MessageDelivered.cs" />
