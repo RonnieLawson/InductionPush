@@ -104,6 +104,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountEventController.cs" />
+    <Compile Include="Controllers\MessageDeliveredController.cs" />
     <Compile Include="Controllers\RawContentReader.cs" />
     <Compile Include="Models\MessageDelivered.cs" />
     <Compile Include="Models\InboundMessage.cs" />
