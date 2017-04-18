@@ -3,7 +3,7 @@ using InductionPush.Models;
 
 namespace InductionPush.Controllers
 {
-    public class MessageDeliveredController : ApiController
+    public class DeliveredMessagesController : ApiController
     {
         private readonly EmailSender _emailSender = new EmailSender();
         
