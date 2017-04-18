@@ -18,9 +18,9 @@ namespace InductionPush.Controllers
                 return;
             }
 
-            System.Diagnostics.Trace.TraceInformation($"Message {deliveredMessage.Id} was been delivered at {deliveredMessage.OccurredAt.ToShortDateString()} : {deliveredMessage.OccurredAt.ToShortTimeString()}");
+            System.Diagnostics.Trace.TraceInformation($"Message {deliveredMessage.Id} was delivered at {deliveredMessage.OccurredAt.ToShortDateString()} : {deliveredMessage.OccurredAt.ToShortTimeString()}");
 
-            _emailSender.SendEmail($"Message Delivered", $"Message {deliveredMessage.Id} was been delivered at {deliveredMessage.OccurredAt.ToShortDateString()} : {deliveredMessage.OccurredAt.ToShortTimeString()}");
+            _emailSender.SendEmail($"Message Delivered", $"Message {deliveredMessage.Id} was delivered at {deliveredMessage.OccurredAt.ToShortDateString()} : {deliveredMessage.OccurredAt.ToShortTimeString()}");
         }
     }
 }
